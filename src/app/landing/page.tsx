@@ -6,7 +6,7 @@ import Footer from "@/app/landing/components/footer";
 
 export default function Landing() {
   return (
-    <div className="">
+    <div className="scrollbar-custom h-screen overflow-y-scroll">
       <Navbar />
       <Hero />
       <Demo />
