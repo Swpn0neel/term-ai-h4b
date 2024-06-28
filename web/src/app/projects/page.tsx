@@ -3,7 +3,7 @@ import DashUI from "./components/ui";
 
 export default function DashBoard() {
   return (
-    <div className="">
+    <div className=" ">
       <DashNavBar />
       <DashUI />
     </div>
