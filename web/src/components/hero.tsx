@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -16,7 +17,9 @@ export default function Hero() {
         at anytime whether it's your mobile, browser or any other device
       </p>
       <div className="flex justify-center space-x-4">
-        <Button href="#">Start a project</Button>
+        <Link href="#">
+          <Button>Start a project</Button>
+        </Link>
         <a href="#" className="bg-[#282828] text-white px-4 py-2 rounded">
           Check Demo
         </a>
