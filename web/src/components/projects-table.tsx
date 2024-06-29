@@ -12,15 +12,17 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useUser } from "@clerk/nextjs";
-import { QueryClient, useQuery } from "@tanstack/react-query";
+import { QueryClient, useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Project } from "@prisma/client";
 import Link from "next/link";
+import { Button } from "./ui/button";
+import { toast } from "sonner";
 
 export default function ProjectsTable() {
   const { user } = useUser();
 
-  // const queryClient = new QueryClient()
+  const queryClient = new QueryClient()
 
   const projectsQuery = useQuery({
     queryKey: ["projects", user?.id],
@@ -30,6 +32,18 @@ export default function ProjectsTable() {
     },
     enabled: !!user,
   });
+
+  const deleteProjectsMutation = useMutation({
+    mutationFn: async (projectId: string) => {
+      await axios.delete(`/api/projects/${projectId}`);
+    },
+    onSuccess: () => {
+      toast("Project created successfully.")
+      window.location.reload()
+      queryClient.invalidateQueries({ queryKey: ["projects", user?.id] });
+      queryClient.refetchQueries({ queryKey: ["projects", user?.id] })
+    },
+  })
 
   if (projectsQuery.isLoading || projectsQuery.isError || !projectsQuery.data) {
     return <p>Loading...</p>;
@@ -41,8 +55,8 @@ export default function ProjectsTable() {
         <TableRow>
           <TableHead>Name</TableHead>
           <TableHead>Repository</TableHead>
-          <TableHead>Created</TableHead>
           <TableHead>Updated</TableHead>
+          <TableHead>{""}</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -56,8 +70,11 @@ export default function ProjectsTable() {
                 {project.githubUrl?.replace("https://github.com/", "")}
               </Link>
             </TableCell>
-            <TableCell>{new Date(project.createdAt).toDateString()}</TableCell>
             <TableCell>{new Date(project.updatedAt).toDateString()}</TableCell>
+            <TableCell><Button onClick={() => {
+              deleteProjectsMutation.mutate(project.id)
+              console.log("deleted")
+            }}>Delete</Button></TableCell>
           </TableRow>
         ))}
       </TableBody>

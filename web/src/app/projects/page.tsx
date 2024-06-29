@@ -18,7 +18,7 @@ export default async function Page() {
     "oauth_github",
   );
   const ocktokit = getGithubClient(tokens.data[0].token);
-  const repos = await getRepos(ocktokit);
+  const repos = await getRepos(ocktokit, user.externalAccounts[0].username as string);
 
   // const queryClient = new QueryClient()
 

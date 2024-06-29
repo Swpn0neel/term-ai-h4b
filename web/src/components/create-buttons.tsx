@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import React, { use, useRef } from 'react'
 import {
     Dialog,
     DialogContent,
@@ -19,11 +19,21 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { GithubProjectListItem } from "@/components/clone-button";
 import { Separator } from "@/components/ui/separator";
 import { OctokitResponseRepos } from '@/lib/github';
+import { Input } from './ui/input';
+import { Button } from './ui/button';
+import axios from 'axios';
+import { useUser } from '@clerk/nextjs';
+import { useRouter } from 'next/navigation';
 
 export default function CreateButtons({ repos }: { repos: OctokitResponseRepos }) {
+    const inputRef = useRef<HTMLInputElement>(null!);
+    const {user} = useUser()
+    const router = useRouter()
     return (
         <div className="h-full flex basis-2/5 gap-16 text-xl max-md:flex-col max-md:gap-4">
-            <Card className="h-full flex basis-1/2 justify-center items-center rounded-lg shadow-lg border-2 border-[#d9d9d920] bg-[#1c1c1c]">
+            <Dialog>
+                <DialogTrigger asChild>
+                <Card className="h-full flex basis-1/2 justify-center items-center rounded-lg shadow-lg border-2 border-[#d9d9d920] bg-[#1c1c1c]">
                 <CardHeader className="space-y-2 items-center justify-center">
                     <CardTitle>Start empty project</CardTitle>
                     <CardDescription>
@@ -31,6 +41,19 @@ export default function CreateButtons({ repos }: { repos: OctokitResponseRepos }
                     </CardDescription>
                 </CardHeader>
             </Card>
+                </DialogTrigger>
+                <DialogContent>
+                    <Input ref={inputRef} placeholder="Project name" />
+                    <Button onClick={async () => {
+                        if (!user) return
+                        const project = await axios.post("/api/projects", {
+                            name: inputRef.current.value,
+                            userId: user?.id,
+                        })
+                        router.push(`/projects/${project.data.id}`)
+                    }}>Create</Button>
+                </DialogContent>
+            </Dialog>
 
             <Dialog>
                 <DialogTrigger asChild>

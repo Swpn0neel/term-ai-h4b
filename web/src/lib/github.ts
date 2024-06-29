@@ -9,6 +9,6 @@ export const getGithubClient = (oauthToken: string) => {
   })
 }
 
-export const getRepos = async (octokit: OctokitClient) => {
-  return (await octokit.rest.repos.listForUser({ username: "sammaji", type: "all" }))
+export const getRepos = async (octokit: OctokitClient, username: string) => {
+  return (await octokit.rest.repos.listForUser({ username, type: "all" }))
 }

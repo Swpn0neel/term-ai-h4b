@@ -2,16 +2,22 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+// import {
+//   Breadcrumb,
+//   BreadcrumbItem,
+//   BreadcrumbLink,
+//   BreadcrumbList,
+//   BreadcrumbSeparator,
+// } from "@/components/ui/breadcrumb";
 import Terminal from "@/components/terminal";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import { DialogContent } from "@radix-ui/react-dialog";
+import { FieldValues, useForm } from "react-hook-form";
+import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 export default function Page({
   params: { projectId },
@@ -80,7 +86,8 @@ export default function Page({
   return (
     <div>
       <div className="h-[56px] flex items-center justify-between px-8">
-        <Breadcrumb>
+        <Link href={"/projects"}><Button>Back</Button></Link>
+        {/* <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/projects">Projects</BreadcrumbLink>
@@ -92,7 +99,11 @@ export default function Page({
               </BreadcrumbLink>
             </BreadcrumbItem>
           </BreadcrumbList>
-        </Breadcrumb>
+        </Breadcrumb> */}
+
+        <p>{projectQuery.data.name}</p>
+
+        <Button>Save</Button>
       </div>
 
       {statusMessage && (

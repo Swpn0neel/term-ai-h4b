@@ -8,17 +8,15 @@ RUN apt-get update \
     && apt-get install -y curl python3 g++ make \
     && apt-get -y autoclean
 
-# Install nodejs.
-# ENV NVM_VERSION=0.39.7
-# ENV NODE_VERSION=20.13.1
-# RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh | bash
-# ENV NVM_DIR=/root/.nvm
-# RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
-# RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
-# RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
-# ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+# nvim
+RUN curl -LO https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
+RUN sudo rm -rf /opt/nvim
+RUN sudo tar -C /opt -xzf nvim-linux64.tar.gz
+RUN export PATH="$PATH:/opt/nvim-linux64/bin"
+RUN . ~/.bashrc
 
-# Set up git.
+## plugin
+RUN LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
 
 # Set working directory for all build stages.
 WORKDIR /usr/src/app
