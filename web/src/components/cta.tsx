@@ -7,7 +7,7 @@ export default function CTA() {
   return (
     <div className="">
       <div className="flex flex-col justify-center items-center text-white py-20">
-        <h1 className="text-4xl md:text-6xl font-medium pb-8 font-roboto text-center">
+        <h1 className="select-none text-4xl md:text-6xl font-medium pb-8 font-roboto text-center">
           Start a new project <br />
           with <span className="text-[#3ECF99]">TermAI</span> now!
         </h1>

@@ -10,7 +10,7 @@ import path from "path";
 const app = express();
 const server = createServer(app);
 
-app.use(cors());
+app.use(cors({origin: "*"}));
 
 const io = new Server(server, {
   cors: {

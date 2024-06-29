@@ -18,6 +18,7 @@ import { DialogContent } from "@radix-ui/react-dialog";
 import { FieldValues, useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import LoadingSpinner from "@/components/loading-spinner";
 
 export default function Page({
   params: { projectId },
@@ -26,7 +27,7 @@ export default function Page({
 }) {
   const SOCKET_URL =
     process.env.SOCKET_URL ||
-    "https://term-ai-socket-server-cloud-run-bwvgjyky6q-el.a.run.app";
+    "https://term-ai-socket-server-bwvgjyky6q-el.a.run.app";
   console.log(SOCKET_URL);
   const socket = useRef(io(SOCKET_URL));
   const [statusMessage, setStatusMessage] = useState<string | null>(
@@ -72,7 +73,11 @@ export default function Page({
   }, [projectQuery.data]);
 
   if (projectQuery.isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex items-center justify-center">
+        <LoadingSpinner />
+      </div>
+    )
   }
 
   if (projectQuery.isError) {
@@ -87,22 +92,7 @@ export default function Page({
     <div>
       <div className="h-[56px] flex items-center justify-between px-8">
         <Link href={"/projects"}><Button>Back</Button></Link>
-        {/* <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/projects">Projects</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink href={`/projects/${projectId}`}>
-                {projectId}
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb> */}
-
         <p>{projectQuery.data.name}</p>
-
         <Button>Save</Button>
       </div>
 

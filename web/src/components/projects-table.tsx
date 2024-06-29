@@ -18,6 +18,7 @@ import { Project } from "@prisma/client";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
+import LoadingSpinner from "./loading-spinner";
 
 export default function ProjectsTable() {
   const { user } = useUser();
@@ -38,15 +39,22 @@ export default function ProjectsTable() {
       await axios.delete(`/api/projects/${projectId}`);
     },
     onSuccess: () => {
-      toast("Project created successfully.")
+      toast("Project deleted successfully.")
       window.location.reload()
       queryClient.invalidateQueries({ queryKey: ["projects", user?.id] });
       queryClient.refetchQueries({ queryKey: ["projects", user?.id] })
     },
   })
 
-  if (projectsQuery.isLoading || projectsQuery.isError || !projectsQuery.data) {
-    return <p>Loading...</p>;
+  if (projectsQuery.isLoading) {
+    return <div className="space-x-2">
+      <LoadingSpinner />
+      <p>Loading...</p>;
+    </div>
+  }
+
+  if (projectsQuery.isError || !projectsQuery.data) {
+    return <></>
   }
 
   return (

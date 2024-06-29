@@ -5,7 +5,7 @@ import TypingAnimation from "@/components/magicui/typing-animation";
 export default function Text() {
   return (
     <div className="flex justify-center h-[40vh] pt-5">
-      <div className="flex flex-col gap-4 w-4/5">
+      <div className="select-none flex flex-col gap-4 w-4/5">
         <div className="font-roboto justify-start text-5xl max-sm:text-3xl text-[#D9D9D950]">
           {"*--------"}
         </div>

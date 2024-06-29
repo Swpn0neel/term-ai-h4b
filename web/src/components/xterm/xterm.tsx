@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import "@xterm/xterm/css/xterm.css";
 import { Terminal, ITerminalOptions, ITerminalAddon } from "@xterm/xterm";
 import { FitAddon } from "@xterm/addon-fit";
+import { Socket } from "socket.io-client";
 
 interface IProps {
   /**
@@ -172,6 +173,7 @@ function useBind(
 
 export const Xterm = ({
   id,
+  socket,
   className,
   options,
   addons,
@@ -190,7 +192,7 @@ export const Xterm = ({
   customKeyEventHandler,
   onInit,
   onDispose,
-}: IProps) => {
+}: IProps & { socket?: Socket }) => {
   const divRef = useRef<HTMLDivElement | null>(null);
   const xtermRef = useRef<Terminal | null>(null);
 
@@ -207,6 +209,12 @@ export const Xterm = ({
         xterm.loadAddon(addon);
       });
     }
+
+    xterm.onResize((size) => {
+      fitAddon.fit();
+      socket?.emit("shell:resize", { cols: size.cols, rows: size.rows });
+      console.log(size);
+    })
 
     // Add Custom Key Event Handler if provided
     if (customKeyEventHandler) {
