@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+*, html {
+  scroll-behavior: smooth !important;
+}
+
 body {
   background-color: #1c1c1c;
 }

@@ -17,15 +17,15 @@ export default function Navbar() {
           <a href="#" className="hover:text-gray-400">
             Home
           </a>
-          <a href="#" className="hover:text-gray-400">
+          <a href="#features" className="hover:text-gray-400">
             Features
           </a>
-          <a href="#" className="hover:text-gray-400">
+          <a href="#demo-video" className="hover:text-gray-400">
             Demo
           </a>
         </div>
         <div className="flex gap-6 max-sm:gap-4 justify-end items-center">
-          <Link href="#">
+          <Link href="/login">
             <Button>Sign In</Button>
           </Link>
         </div>

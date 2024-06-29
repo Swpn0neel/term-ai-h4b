@@ -5,7 +5,7 @@ import SVGIcon from "@/components/ui/SVGIcon";
 
 export default function Features() {
   return (
-    <div className="flex justify-center text-[#d9d9d980] py-6 max-sm:py-2 max-lg:py-4">
+    <div id="features" className="flex justify-center text-[#d9d9d980] py-6 max-sm:py-2 max-lg:py-4">
       <div className="w-4/5 flex gap-4 max-lg:flex-col">
         <div className="basis-1/3 grid grid-rows-[1fr,auto,auto] gap-4">
           <div className="select-none text-4xl md:text-5xl font-roboto text-white">
@@ -51,8 +51,7 @@ export default function Features() {
                   />
                 </div>
                 <div className="text-center text-xl">
-                  Save your code by syncing it directly to your GitHub, and drop
-                  in and out while coding.
+                  Everything just from a single terminal. From coding to any task, your development just needs a terminal.
                 </div>
               </div>
             </WobbleCard>
