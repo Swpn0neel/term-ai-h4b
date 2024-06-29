@@ -20,37 +20,58 @@ export default function Footer() {
               Term<span className="text-[#3ECF99]">AI</span>
             </h2>
             <p className="pt-4 text-gray-400">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type.
+              With the power of our AI-based Web Terminal, you can code from
+              anywhere at anytime whether it's your mobile, browser or any other
+              device
             </p>
           </div>
           <div className="flex gap-24 basis-3/5 justify-end max-md:flex-wrap max-md:justify-start pt-8 max-md:pt-4 max-md:gap-8 ">
             <div>
               <h2 className="text-lg font-bold text-white">PAGES</h2>
               <ul className="pt-4 text-gray-400 space-y-2">
-                <li>Home</li>
-                <li>FAQ</li>
-                <li>Dashboard</li>
-                <li>Pricing</li>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">FAQ</a>
+                </li>
+                <li>
+                  <a href="#">Dashboard</a>
+                </li>
+                <li>
+                  <a href="#">Pricing</a>
+                </li>
               </ul>
             </div>
             <div>
               <h2 className="text-lg font-bold text-white">SOCIALS</h2>
               <ul className="pt-4 text-gray-400 space-y-2">
-                <li>Twitter</li>
-                <li>Instagram</li>
-                <li>Facebook</li>
-                <li>YouTube</li>
+                <li>
+                  <a href="#">Twitter</a>
+                </li>
+                <li>
+                  <a href="#">Instagram</a>
+                </li>
+                <li>
+                  <a href="#">Facebook</a>
+                </li>
+                <li>
+                  <a href="#">YouTube</a>
+                </li>
               </ul>
             </div>
             <div>
               <h2 className="text-lg font-bold text-white">LEGALS</h2>
               <ul className="pt-4 text-gray-400 space-y-2">
-                <li>Terms and Conditions</li>
-                <li>Cookie Settings</li>
-                <li>Privacy Policy</li>
+                <li>
+                  <a href="#">Terms and Conditions</a>
+                </li>
+                <li>
+                  <a href="#">Cookie Settings</a>
+                </li>
+                <li>
+                  <a href="#">Privacy Policy</a>
+                </li>
               </ul>
             </div>
           </div>

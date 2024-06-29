@@ -7,12 +7,12 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <div className="text-center p-8 md:p-20">
-      <h1 className="text-4xl md:text-6xl font-medium pb-6 lg:px-72 md:px-36 text-white font-roboto">
+      <h1 className="select-none text-4xl md:text-6xl font-medium pb-6 lg:px-72 md:px-36 text-white font-roboto">
         Code from <span className="text-[#3ECF99]">anywhere</span> &
         <span className="text-[#3ECF99]"> anytime</span> with AI
       </h1>
 
-      <p className="text-[#d9d9d9] text-md md:text-xl px-4 lg:px-96 md:px-32 pb-4">
+      <p className="select-none text-[#d9d9d9] text-md md:text-xl px-4 lg:px-96 md:px-32 pb-4">
         With the power of our AI-based Web Terminal, you can code from anywhere
         at anytime whether it's your mobile, browser or any other device
       </p>
