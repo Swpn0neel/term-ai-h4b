@@ -8,7 +8,7 @@ export default function Features() {
     <div className="flex justify-center text-[#d9d9d980] py-6 max-sm:py-2 max-lg:py-4">
       <div className="w-4/5 flex gap-4 max-lg:flex-col">
         <div className="basis-1/3 grid grid-rows-[1fr,auto,auto] gap-4">
-          <div className="text-4xl md:text-5xl font-roboto text-white">
+          <div className="select-none text-4xl md:text-5xl font-roboto text-white">
             <span className="text-[#3ECF99]">AI</span> is the new convenience.
           </div>
           <WobbleCard containerClassName="shadow-lg bg-[#1c1c1c] px-8 md:px-16 py-20 border border-gray-600 rounded-lg flex flex-col items-center justify-center">
@@ -30,7 +30,7 @@ export default function Features() {
               <div className="">
                 <SVGIcon
                   svg={svgPaths.second}
-                  className="w-20 h-24 sm:w-24 sm:h-28 md:w-20 md:h-28"
+                  className="w-20 h-24 sm:w-24 sm:h-28 md:w-20 md:h-24"
                 />
               </div>
               <div className="text-center text-xl">
@@ -43,11 +43,11 @@ export default function Features() {
         <div className="basis-2/3 grid grid-rows-[auto,auto,1fr] gap-4">
           <div className="flex gap-4 max-sm:flex-col">
             <WobbleCard containerClassName="flex-grow shadow-lg bg-[#1c1c1c] px-8 md:px-16 py-20 md:basis-5/12 border border-gray-600 rounded-lg flex flex-col items-center justify-center">
-              <div className="flex flex-col gap-8 items-center justify-center">
+              <div className="flex flex-col gap-4 items-center justify-center">
                 <div className="">
                   <SVGIcon
                     svg={svgPaths.third}
-                    className="w-20 h-24 sm:w-24 sm:h-28 md:w-20 md:h-28"
+                    className="w-20 h-24 sm:w-24 sm:h-28 md:w-20 md:h-24"
                   />
                 </div>
                 <div className="text-center text-xl">
@@ -89,10 +89,12 @@ export default function Features() {
               </div>
             </WobbleCard>
           </div>
-          <div className="text-4xl md:text-5xl font-roboto text-white">
+          
+          <div className="lg:pl-4 pt-4 select-none text-4xl md:text-5xl font-roboto text-white">
             And, a lot <span className="text-[#3ECF99]">more features </span>
             ready for you to explore...
           </div>
+          
         </div>
       </div>
     </div>

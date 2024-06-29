@@ -15,7 +15,7 @@ export default function Footer() {
       </svg>
       <div className="bg-[#161616] py-8 px-6 md:px-20 lg:px-40">
         <div className="flex flex-col items-center md:flex-row">
-          <div className="md:basis-2/5 justify-between">
+          <div className="select-none md:basis-2/5 justify-between">
             <h2 className="text-3xl font-medium text-white">
               Term<span className="text-[#3ECF99]">AI</span>
             </h2>
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
           <div className="flex gap-24 basis-3/5 justify-end max-md:flex-wrap max-md:justify-start pt-8 max-md:pt-4 max-md:gap-8 ">
             <div>
-              <h2 className="text-lg font-bold text-white">PAGES</h2>
+              <h2 className="select-none text-lg font-bold text-white">PAGES</h2>
               <ul className="pt-4 text-gray-400 space-y-2">
                 <li>
                   <a href="#">Home</a>
@@ -44,7 +44,7 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="text-lg font-bold text-white">SOCIALS</h2>
+              <h2 className="select-none text-lg font-bold text-white">SOCIALS</h2>
               <ul className="pt-4 text-gray-400 space-y-2">
                 <li>
                   <a href="#">Twitter</a>
@@ -61,7 +61,7 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="text-lg font-bold text-white">LEGALS</h2>
+              <h2 className="select-none text-lg font-bold text-white">LEGALS</h2>
               <ul className="pt-4 text-gray-400 space-y-2">
                 <li>
                   <a href="#">Terms and Conditions</a>
@@ -76,7 +76,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-700 pt-4 text-center text-gray-400">
+        <div className="select-none mt-8 border-t border-gray-700 pt-4 text-center text-gray-400">
           Copyright © 2023. Made by Team Bengal Devs for the purpose of Hack 4
           Bengal 3.0
         </div>

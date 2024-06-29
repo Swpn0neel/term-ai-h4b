@@ -25,11 +25,8 @@ export default function Navbar() {
           </a>
         </div>
         <div className="flex gap-6 max-sm:gap-4 justify-end items-center">
-          <a href="#" className="hover:text-gray-400">
-            Log In
-          </a>
           <Link href="#">
-            <Button>Sign Up</Button>
+            <Button>Sign In</Button>
           </Link>
         </div>
       </div>

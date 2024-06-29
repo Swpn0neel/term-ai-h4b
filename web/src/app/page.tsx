@@ -1,4 +1,4 @@
-import Navbar from "@/components/navbar-dash";
+import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import Demo from "@/components/demo";
 import Text from "@/components/text";
