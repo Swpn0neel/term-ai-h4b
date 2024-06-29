@@ -38,7 +38,7 @@ export default function ProjectsTable() {
       await axios.delete(`/api/projects/${projectId}`);
     },
     onSuccess: () => {
-      toast("Project created successfully.")
+      toast("Project deleted successfully.")
       window.location.reload()
       queryClient.invalidateQueries({ queryKey: ["projects", user?.id] });
       queryClient.refetchQueries({ queryKey: ["projects", user?.id] })
