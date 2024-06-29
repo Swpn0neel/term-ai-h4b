@@ -27,9 +27,9 @@ export default function Page({
 }) {
   const SOCKET_URL =
     process.env.SOCKET_URL ||
-    "https://term-ai-socket-server-cloud-run-bwvgjyky6q-el.a.run.app";
+    "https://term-ai-socket-server-bwvgjyky6q-el.a.run.app";
   console.log(SOCKET_URL);
-  const socket = useRef(io("http://localhost:3000"));
+  const socket = useRef(io(SOCKET_URL));
   const [statusMessage, setStatusMessage] = useState<string | null>(
     "Connecting...",
   );
