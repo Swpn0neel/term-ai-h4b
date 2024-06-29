@@ -36,16 +36,17 @@ export default function Terminal({ socket }: { socket: Socket }) {
   }, [terminal]);
 
   return (
-    <div className="bg-slate-900 py-4">
+    <div className="bg-[#d9d9d920] py-2">
       <Xterm
-        className="mx-4"
+        className="mx-2"
         onInit={onInit}
         onDispose={onDispose}
         onData={onData}
-        onResize={({ rows, cols }) => {
-          console.log(rows, cols);
-          socket.emit("shell:resize", { rows, cols });
-        }}
+        socket={socket}
+        // onResize={({ rows, cols }) => {
+        //   console.log(rows, cols);
+        //   socket.emit("shell:resize", { rows, cols });
+        // }}
       />
     </div>
   );
