@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -27,7 +28,9 @@ export default function Navbar() {
           <a href="#" className="hover:text-gray-400">
             Log In
           </a>
-          <Button href="#">Sign Up</Button>
+          <Link href="#">
+            <Button>Sign Up</Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 "use client";
 
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Terminal: React.FC = () => {
   return (
@@ -13,7 +14,9 @@ const Terminal: React.FC = () => {
           sample-app
         </div>
         <div className="flex items-center justify-end">
-          <Button href="#">Save</Button>
+          <Link href="#">
+            <Button>Save</Button>
+          </Link>
         </div>
       </div>
       <div className="w-full h-full mb-5 rounded-lg border-2 border-[#d9d9d920] bg-[#1c1c1c]"></div>
