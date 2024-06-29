@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Roboto_Slab } from "next/font/google";
 import { Poppins } from "next/font/google";
+import Providers from "./providers";
+import { Toaster } from "@/components/ui/sonner"
 
 const robotoSlab = Roboto_Slab({
   weight: ["400", "500"],
@@ -30,7 +32,12 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${robotoSlab.variable} dark`}
     >
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <Providers>
+          {children}
+          <Toaster />
+        </Providers>
+      </body>
     </html>
   );
 }
