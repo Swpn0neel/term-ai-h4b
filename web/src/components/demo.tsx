@@ -1,15 +1,12 @@
 "use client";
 
-// import Globe from "./magicui/globe"
-
 export default function Demo() {
   return (
-    <div className="flex justify-center">
-      {/* <Globe/> */}
+    <div className="flex justify-center"> 
       <div className="w-4/5">
         <div className="rounded-lg shadow-lg border-2 border-[#d9d9d920]">
           <div className="flex items-center py-5 px-8 bg-[#252525] rounded-t-lg">
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 scroll-m-16" id="demo-video">
               <div className="w-3 h-3 bg-red-500 rounded-full"></div>
               <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
               <div className="w-3 h-3 bg-green-500 rounded-full"></div>

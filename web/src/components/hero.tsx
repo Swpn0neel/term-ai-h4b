@@ -17,12 +17,12 @@ export default function Hero() {
         at anytime whether it's your mobile, browser or any other device
       </p>
       <div className="flex justify-center space-x-4">
-        <Link href="#">
+        <Link href="/projects">
           <Button>Start a project</Button>
         </Link>
-        <a href="#" className="bg-[#282828] text-white px-4 py-2 rounded">
+        <Link href="#demo-video" className="bg-[#282828] text-white px-4 py-2 rounded">
           Check Demo
-        </a>
+        </Link>
       </div>
     </div>
   );
