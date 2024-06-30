@@ -3,7 +3,7 @@
 export default function Demo() {
   return (
     <div className="flex justify-center"> 
-      <div className="w-4/5">
+      <div className="w-[50vw] max-sm:w-[80vw]">
         <div className="rounded-lg shadow-lg border-2 border-[#d9d9d920]">
           <div className="flex items-center py-5 px-8 bg-[#252525] rounded-t-lg">
             <div className="flex space-x-2 scroll-m-16" id="demo-video">
@@ -16,7 +16,9 @@ export default function Demo() {
             </div>
           </div>
 
-          <div className="h-[75vh] p-4 rounded-b-lg"></div>
+          <div className="rounded-b-lg">
+            <video src="/demo.mp4" autoPlay controls className="w-[50vw] max-sm:w-[80vw]"/>
+          </div>
         </div>
       </div>
     </div>
