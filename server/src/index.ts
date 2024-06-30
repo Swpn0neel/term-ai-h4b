@@ -54,6 +54,7 @@ io.on("connection", (socket) => {
           return
         }
         socket.emit("ly:clone:success", { stdout, stderr })
+        process.chdir(path.join(process.cwd(), "apps", name))
       })
       return
     }

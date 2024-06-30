@@ -2,8 +2,6 @@ import { headers } from "next/headers";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { createHmac } from "crypto";
-import axios from "axios";
-import { apiRoute } from "@/lib/utils";
 import prisma from "@/lib/prisma";
 
 export async function POST(req: Request) {
