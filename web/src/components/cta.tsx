@@ -12,10 +12,10 @@ export default function CTA() {
           with <span className="text-[#3ECF99]">TermAI</span> now!
         </h1>
         <div className="flex justify-center space-x-4">
-          <Link href="#">
+          <Link href="/projects">
             <Button>Start a project</Button>
           </Link>
-          <a href="#" className="bg-[#282828] text-white px-4 py-2 rounded">
+          <a href="#demo-video" className="bg-[#282828] text-white px-4 py-2 rounded">
             Check Demo
           </a>
         </div>
