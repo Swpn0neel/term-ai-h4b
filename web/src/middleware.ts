@@ -16,6 +16,7 @@ import { authMiddleware } from "@clerk/nextjs";
 export default authMiddleware({
 	clockSkewInMs: 100_000,
 	clockSkewInSeconds: 100,
+  ignoredRoutes: ["/api(.*)"]
 });
 
 export const config = {
